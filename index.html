@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional lifeguard and water safety services by Pro Active Lifeguard Services. Event safety, facility staffing, and training.">
+    <title>Pro Active Lifeguard Services | South Africa's Premier Water Safety Provider</title>
+    <style>
+        :root {
+            --primary-blue: #0077b6; /* Main professional blue from logo concept */
+            --accent-gold: #fbbf24;  /* Trust/Alert gold (sunrise color) */
+            --deep-navy: #023e8a;    /* Logo base blue */
+            --white: #ffffff;
+            --light-bg: #f8fafc;
+            --text-dark: #1f2937;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .header-logo {
+            height: 60px; /* Optimal size for mobile/desktop */
+            width: auto;
+        }
+
+        .header-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--deep-navy);
+            /* Hidden on very small mobile if necessary */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--deep-navy);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-contact-btn {
+            background-color: var(--primary-blue);
+            color: var(--white) !important;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            /* Using a strong placeholder image URL for water safety */
+            background: linear-gradient(rgba(0,119,182,0.8), rgba(2,62,138,0.9)), url('https://images.unsplash.com/photo-1518331306354-94c65768acbe?q=80&w=1600') no-repeat center center/cover;
+            color: var(--white);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            margin-top: 80px; /* Offset for fixed header */
+        }
+
+        #hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .btn-main {
+            background-color: var(--accent-gold);
+            color: var(--deep-navy);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #e3a80f;
+            transform: translateY(-3px);
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--deep-navy);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Services Grid */
+        #services {
+            background-color: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-box {
+            background: var(--light-bg);
+            border-left: 5px solid var(--primary-blue);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-box h3 {
+            color: var(--deep-navy);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* --- Contact Details Box --- */
+        #contact {
+            background-color: var(--light-bg);
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-info-box {
+            background: #e0f2fe; /* light blue tint */
+            border: 1px solid #bae6fd;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-info-box p {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--deep-navy);
+        }
+
+        .contact-info-box a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--deep-navy);
+        }
+
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        form textarea {
+            resize: vertical;
+        }
+
+        form input[type="submit"] {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 0;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: var(--deep-navy);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--deep-navy);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 5%;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 1rem;
+            }
+            .header-logo { height: 50px; }
+            .header-title { font-size: 1.1rem; text-align: center; }
+            nav ul {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            #hero h2 {
+                font-size: 2.2rem;
+            }
+            section {
+                padding: 60px 5%;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="header-logo-container">
+            <!-- Ensure your logo is named logo.png and is in the same folder as this file -->
+            <img src="logo.png" alt="Pro Active Lifeguard Services Logo" class="header-logo">
+            <span class="header-title">Pro Active Lifeguard Services</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact" class="nav-contact-btn">075 114 1212</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Your Safety. Our Priority. Premier Water Safety Across South Africa.</h2>
+        <p>Pro Active Lifeguard Services ensures professional, certified, and vigilant safety management for your facilities and aquatic events.</p>
+        <a href="#contact" class="btn-main">Request an Immediate Quote</a>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="form-container">
+            <p><strong>Pro Active Lifeguard Services</strong> is dedicated to setting the benchmark for aquatic safety. We operate across South Africa, providing highly trained, certified lifeguards committed to accident prevention and swift, effective emergency response.</p>
+            <br>
+            <p>Whether you manage a community pool, a large resort, or a major shoreline event, our mission is to deliver peace of mind through unwavering vigilance and professional expertise.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Our Professional Services</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <h3>Swimming Pool Management & Staffing</h3>
+                <p>Full-service lifeguard staffing for residential complexes, municipal pools, gym facilities, and hotels. We manage safety, rotation, and reporting.</p>
+            </div>
+            <div class="service-box">
+                <h3>Event Water Safety Teams</h3>
+                <p>Specialized safety cover for open-water swims, triathlons, film shoots on water, beach festivals, and private corporate pool events.</p>
+            </div>
+            <div class="service-box">
+                <h3>Beach & Shoreline Patrols</h3>
+                <p>Vigilant, proactive patrolling for beachfronts, lagoons, and river recreation areas, ensuring bather safety in dynamic environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact & Quote Request</h2>
+        <div class="form-container">
+            
+            <div class="contact-info-box">
+                <p>📞 Phone: <a href="tel:0751141212">075 114 1212</a></p>
+                <p>✉️ Email: <a href="mailto:proactivelifeguard@yahoo.com">proactivelifeguard@yahoo.com</a></p>
+            </div>
+
+            <!-- Form setup to trigger the email client with details -->
+            <form action="mailto:proactivelifeguard@yahoo.com" method="post" enctype="text/plain">
+                <label for="company_name">Company / Organization Name (Optional)</label>
+                <input type="text" id="company_name" name="Company Name">
+
+                <label for="contact_person">Contact Person Name</label>
+                <input type="text" id="contact_person" name="Contact Person" required>
+
+                <label for="phone">Your Phone Number</label>
+                <input type="tel" id="phone" name="Phone Number" required placeholder="e.g. 0821234567">
+
+                <label for="email">Your Email Address</label>
+                <input type="email" id="email" name="Email Address" required>
+
+                <label for="service_type">Which service do you require?</label>
+                <select id="service_type" name="Service Type" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="Permanent Pool Staffing">Permanent Pool Staffing</option>
+                    <option value="Special Event Safety Cover">Special Event Safety Cover</option>
+                    <option value="Beach/Shoreline Patrol">Beach/Shoreline Patrol</option>
+                    <option value="Water Safety Training">Water Safety Training</option>
+                </select>
+
+                <label for="details">Additional Details</label>
+                <textarea id="details" name="Event or Facility Details" rows="5" placeholder="Describe the facility size, expected attendance, or event dates." required></textarea>
+
+                <input type="submit" value="Submit Details for Quote" class="btn-main">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Pro Active Lifeguard Services. All rights reserved.</p>
+        <p>Email: <a href="mailto:proactivelifeguard@yahoo.com">proactivelifeguard@yahoo.com</a> | Phone: <a href="tel:0751141212">075 114 1212</a></p>
+        <p>Serving South Africa.</p>
+    </footer>
+
+</body>
+</html>
+<img src="logo.png" alt="Pro Active Lifeguard Services Logo" class="header-logo">
